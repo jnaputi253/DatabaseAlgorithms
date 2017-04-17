@@ -30,13 +30,10 @@ public class BufferHashTable {
 
     public Frame insert(int pageNumber) {
         Frame frameToReturn;
-
-        if(!pageMap.containsKey(pageNumber)) {
-            if(!pageMap.containsKey(pageNumber)) {
-                System.out.println("\nThe specified page does not exist\n");
-                return null;
-            }
-        }
+		
+		if(!pageMap.containsKey(pageNumber)) {
+			System.out.printf("\nThe specified page {%d} does not exist\n\n", pageNumber);
+		}
 
         if(!listContainsPage(pageNumber)) {
             if(list.size() < frameSize) {
